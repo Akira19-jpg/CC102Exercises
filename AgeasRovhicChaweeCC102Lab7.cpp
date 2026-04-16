@@ -3,7 +3,6 @@
 #include <string>
 #include <iomanip>
 #include <algorithm>
-
 using namespace std;
 
 // 1. Create a struct named Book
