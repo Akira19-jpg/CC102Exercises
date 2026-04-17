@@ -4,12 +4,12 @@
 #include <vector>
 
 int main() {
-    // 1. Define the data and filenames
+    
     std::vector<std::string> colors = {"Crimson", "Emerald", "Cobalt", "Amber", "Violet"};
     std::string sourceFile = "color.txt";
     std::string destinationFile = "color_copy.txt";
 
-    // --- PHASE 1: WRITING TO COLOR.TXT ---
+    
     std::ofstream outFile(sourceFile);
 
     if (!outFile) {
@@ -25,11 +25,11 @@ int main() {
     std::cout << "Successfully created " << sourceFile << ".\n";
 
 
-    // --- PHASE 2: READING AND COPYING TO COLOR_COPY.TXT ---
+    
     std::ifstream inFile(sourceFile);
     std::ofstream copyFile(destinationFile);
 
-    // Validation: Ensure both files opened correctly
+    
     if (!inFile.is_open()) {
         std::cerr << "Error: Could not open " << sourceFile << " for reading." << std::endl;
         return 1;
@@ -45,7 +45,7 @@ int main() {
         copyFile << line << "\n";
     }
 
-    // --- PHASE 3: CLEANUP ---
+    
     inFile.close();
     copyFile.close();
 
