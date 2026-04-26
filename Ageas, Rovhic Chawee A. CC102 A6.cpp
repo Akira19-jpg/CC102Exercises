@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-// Function to check if a number is prime
+
 bool isPrime(int n) {
     if (n <= 1) return false;
     if (n == 2) return true;
@@ -14,7 +14,7 @@ bool isPrime(int n) {
     return true;
 }
 
-// Function to count prime numbers in file
+
 int countPrimesInFile(const string& filename) {
     ifstream file(filename);
     int num, count = 0;
