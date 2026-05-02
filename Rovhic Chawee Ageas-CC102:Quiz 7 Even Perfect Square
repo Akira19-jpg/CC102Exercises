@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <cmath>
+
+using namespace std;
+
+bool isEvenPerfectSquare(int n) {
+    if (n < 0 || n % 2 != 0) return false;
+    int root = round(sqrt(n));
+    return (root * root == n);
+}
+
+int main() {
+    ifstream inputFile("input.txt");
+    ofstream outputFile("output.txt");
+    int num;
+
+    if (inputFile.is_open()) {
+        while (inputFile >> num) {
+            if (isEvenPerfectSquare(num)) {
+                outputFile << num << endl;
+            }
+        }
+        inputFile.close();
+        outputFile.close();
+    }
+    return 0;
+}
