@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+#include <cmath>
+
+using namespace std;
+
+bool isOddPrime(int n) {
+    if (n <= 2 || n % 2 == 0) return false; // Must be odd and > 2
+    for (int i = 3; i <= sqrt(n); i += 2) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    ifstream inputFile("input.txt");
+    ofstream outputFile("output.txt");
+    int num;
+
+    if (inputFile.is_open()) {
+        while (inputFile >> num) {
+            if (isOddPrime(num)) {
+                outputFile << num << endl;
+            }
+        }
+        inputFile.close();
+        outputFile.close();
+    }
+    return 0;
+}
